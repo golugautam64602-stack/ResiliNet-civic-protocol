@@ -1,20 +1,50 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🌐 ResiliNet Civic Protocol
 
-# Run and deploy your AI Studio app
+This project is a decentralized civic protocol platform developed for the hackathon. The application is fully deployed and production-ready for users to interact with.
 
-This contains everything you need to run your app locally.
+## 🚀 Live Deployment
+* **Frontend URL:** [https://resili-net-civic-protocol.vercel.app]
 
-View your app in AI Studio: https://ai.studio/apps/565cc87b-2749-4089-a2cf-32ec547f9891
+---
 
-## Run Locally
+## 🛠️ Tech Stack
 
-**Prerequisites:**  Node.js
+* **Frontend:** React, TypeScript, Vite, Tailwind CSS
+* **Backend & Database:** Firebase (Authentication, Firestore / Realtime Database)
+* **Hosting & Deployment:** Vercel
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🏗️ Architecture & Integration
+
+### 1. Frontend (Vercel)
+Our frontend is fully hosted on **Vercel**, integrated with a CI/CD pipeline. Every time code is pushed to the `main` branch on GitHub, Vercel automatically triggers a production build and updates the live site instantly.
+
+### 2. Backend & Database (Firebase)
+* **User Authentication:** Firebase Auth is implemented to handle secure user sign-ups, logins, and identity verification.
+* **Database & Storage:** Real-time user submissions, civic protocol interactions, and data logs are securely routed and stored directly inside our Firebase environment.
+* **Integration:** The frontend seamlessly communicates with the backend services through a dedicated `firebase.ts` configuration layer.
+
+---
+
+## 💻 Local Setup & Installation
+
+To run this project locally on your machine, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/golugautam64602-stack/ResiliNet-civic-protocol.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd ResiliNet-civic-protocol
+   ```
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+   *(The application will be running locally at `http://localhost:5173`)*
