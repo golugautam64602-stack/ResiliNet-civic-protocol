@@ -1,0 +1,6 @@
+{
+  "name": "ResiliNet Civic Protocol",
+  "description": "Decentralized Community Aid Matching & Local Supply Coordination Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

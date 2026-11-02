@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Civic participant profile with role designation (aid seeker, donor, volunteer)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["seeker", "donor", "volunteer"] },
+        "organization": { "type": "string" },
+        "phone": { "type": "string" },
+        "region": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "email", "displayName", "role"]
+    },
+    "AidRequest": {
+      "title": "Aid Request",
+      "description": "Community aid need beacon",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "urgency": { "type": "string" },
+        "region": { "type": "string" },
+        "location": { "type": "string" },
+        "quantityNeeded": { "type": "number" },
+        "quantityPledged": { "type": "number" },
+        "unit": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "seekerId": { "type": "string" },
+        "postedAt": { "type": "string" }
+      },
+      "required": ["id", "title", "category", "urgency", "region", "location"]
+    },
+    "SupplyBatch": {
+      "title": "Supply Batch",
+      "description": "Donated or staged supply batch",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "donorId": { "type": "string" },
+        "donorName": { "type": "string" },
+        "category": { "type": "string" },
+        "itemName": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "condition": { "type": "string" },
+        "hubLocation": { "type": "string" },
+        "region": { "type": "string" }
+      },
+      "required": ["id", "donorName", "category", "itemName", "quantity"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile with role authentication"
+    },
+    "/aidRequests/{requestId}": {
+      "schema": "AidRequest",
+      "description": "Active community aid requests"
+    },
+    "/supplyBatches/{batchId}": {
+      "schema": "SupplyBatch",
+      "description": "Available supply batches registered by donors"
+    }
+  }
+}
